@@ -31,3 +31,4 @@ ENCODER_ENABLE = yes
 
 LAYOUTS = ortho_4x12
 LAYOUTS_HAS_RGB = no
+

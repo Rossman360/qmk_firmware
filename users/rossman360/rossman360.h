@@ -9,6 +9,7 @@
 #define XPANDR LCTL(LSFT(KC_X))
 #define NTAB LCTL(KC_T)
 #define CTAB LCTL(KC_W)
+#define WS LALT(KC_F6)
 #define XPANDR LCTL(LSFT(KC_X))
 #define CMDBSP MT(MOD_LGUI, KC_BSPC)
 #define ALTDEL MT(MOD_LALT, KC_DEL)
@@ -19,6 +20,7 @@
 #define CTRLSP MT(MOD_LCTL, KC_SPACE)
 #define RVOLU LCTL(KC_RBRC)
 #define RVOLD LCTL(KC_LBRC)
+#define QUIT LCTL(KC_Q)
 
 // Define all of
 enum custom_keycodes {
@@ -32,4 +34,5 @@ enum custom_keycodes {
   WREFRESH,
   PMERGE,
   REMCAPS,
+  EMDASH
 };
