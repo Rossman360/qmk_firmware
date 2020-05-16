@@ -63,6 +63,14 @@ case _BASE:
       tap_code16(KC_VOLU);
     }
    break;
+case _DEL:
+    if (clockwise) {
+      tap_code16(KC_F11);
+    } else {
+      tap_code16(KC_F3);
+    }
+   break;
+
  case _FN1:
     if (clockwise) {
       tap_code16(S(KC_TAB));
