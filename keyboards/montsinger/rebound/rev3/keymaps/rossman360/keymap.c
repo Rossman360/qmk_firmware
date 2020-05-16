@@ -20,13 +20,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT_all(
     KC_ESC  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,          KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , NTAB  ,
+<<<<<<< HEAD
     JUMPBACK, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , WS     , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
     KC_LSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_LALT, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,
+=======
+    JUMPBACK, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,MO(_DEL), KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
+    KC_LSFT , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , LM(_FN1, MOD_LALT), KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_MINS,
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
     CMDBSP  , ALTDEL , KC_NO  , CTRLSP , KC_TAB , PGMOD  , QUIT   , ENTMOD , SPCMOD , MO(_DEL),KC_NO  , KC_BSPC, KC_DEL
   ),
 
 [_FN1] = LAYOUT_all(
+<<<<<<< HEAD
     RESET  , TAB1   , TAB2   , TAB3   , TAB4   , _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
+=======
+    _______, TAB1   , TAB2   , TAB3   , TAB4   , _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
     KC_CAPS, _______, _______, _______, _______, _______, _______, KC_HOME, KC_LEFT, KC_UP  , KC_RIGHT,KC_END , KC_NO  ,
     _______, _______, XPANDR , _______, _______, _______, _______, _______, PMERGE , KC_DOWN, _______, _______, EMDASH ,
     WREFRESH,_______, _______, _______, LWORD  , RWORD  , _______, KC_NO  , _______, KC_NO  , _______, _______, _______
@@ -40,7 +49,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 [_DEL] = LAYOUT_all(
+<<<<<<< HEAD
     _______, _______, _______, _______, _______, _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
+=======
+    RESET,   _______, _______, _______, _______, _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
     REMCAPS, _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_UP  ,KC_RIGHT, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DOWN, _______, _______, _______,
     _______, _______, _______, KC_DEL , KC_BSPC, BWORD  , _______, KC_NO  , KC_NO  , _______, _______, _______, _______
@@ -50,16 +63,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,          KC_6   , KC_7   , KC_8   , KC_9   , KC_MINS, KC_EQL,
     KC_CAPS, _______, _______, _______, _______, _______, _______, KC_MINS, KC_4   , KC_5   , KC_6   , KC_COLN, _______,
     _______, _______, _______, _______, _______, KC_LBRC, _______, KC_RBRC, KC_1   , KC_2   , KC_3   , KC_BSLS, _______,
+<<<<<<< HEAD
     _______, _______, _______, _______, _______, _______, _______, KC_NO  , KC_0   , KC_0   , _______, _______, _______
+=======
+    _______, _______, _______, _______, _______, _______, _______, KC_NO  , KC_NO  , KC_0   , _______, _______, _______
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
   )
 };
 
 void encoder_update_user(uint8_t index, bool clockwise) {
+<<<<<<< HEAD
+=======
+   switch(get_highest_layer(layer_state)){
+case _BASE:
+    if (clockwise) {
+      tap_code16(KC_VOLD);
+    } else {
+      tap_code16(KC_VOLU);
+    }
+   break;
+ case _FN1:
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
     if (clockwise) {
       tap_code16(S(KC_TAB));
     } else {
       tap_code16(KC_TAB);
     }
+<<<<<<< HEAD
+=======
+   break;
+}
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 }
 
 #ifdef OLED_DRIVER_ENABLE
@@ -98,3 +132,7 @@ void oled_task_user(void) {
 }
 
 #endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9

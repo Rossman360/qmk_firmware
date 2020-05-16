@@ -42,7 +42,11 @@ diode)
  *
  */
 
+<<<<<<< HEAD
 #define MATRIX_ROW_PINS { F4, F5, D5, B7, B0 }
+=======
+#define MATRIX_ROW_PINS { F4, F5, D1, D0, B0 }
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 #define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5, B6, B2, B3, B1, F7, F6 }
 #define UNUSED_PINS { }
 
