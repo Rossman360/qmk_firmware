@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+    "keyboard":"montsinger/rebound/rev2",
+=======
     "keyboard":"montsinger/rebound/rev3",
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
     "url": "https://montsinger.net",
     "maintainer": "rossman360",
     "width": 13,
@@ -27,7 +31,11 @@
                 {"x":3, "y":1},
                 {"x":4, "y":1},
                 {"x":5, "y":1},
+<<<<<<< HEAD
+                {"x":6, "y":2},
+=======
                 {"x":6, "y":1},
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
                 {"x":7, "y":1},
                 {"x":8, "y":1},
                 {"x":9, "y":1},
@@ -125,4 +133,8 @@
             ]
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9

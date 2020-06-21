@@ -1,8 +1,14 @@
 # Rebound
 
+<<<<<<< HEAD
+![Rebound](https://imgur.com/a/R4g6LBD)
+
+A conjoined-split 40%  ortholinear keyboard made and sold by Montsinger. [More info on Montsinger.net](https://montsinger.net).
+=======
 ![Rebound](https://i.imgur.com/IoV64hC.jpg)
 
 A conjoined-split 40% ortholinear keyboard made and sold by Montsinger. [More info on Montsinger.net](https://montsinger.net).
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 
 * Keyboard Maintainer: [Rossman360](https://github.com/rossman360)
 * Hardware Supported: Rebound rev1 rev2 or rev3; Pro Micro or Elite-C
