@@ -42,7 +42,7 @@ diode)
  *
  */
 
-#define MATRIX_ROW_PINS { D1, D0, D4, C6, F7, F6, F5, F4 }
+#define MATRIX_ROW_PINS { D5, B7, D4, C6, F7, F6, F5, F4 }
 #define MATRIX_COL_PINS { D7, E6, B4, B5, B2, B3, B1 }
 #define UNUSED_PINS { B6 }
 
@@ -59,6 +59,11 @@ diode)
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
+
+/* ws2812 RGB LED */
+#define RGB_DI_PIN B6
+#define RGBLED_NUM 17
+#define RGBLIGHT_ANIMATIONS
 
 /* Bootmagic Lite key configuration */
 // #define BOOTMAGIC_LITE_ROW 0
