@@ -21,6 +21,8 @@
 #define RVOLU LCTL(KC_RBRC)
 #define RVOLD LCTL(KC_LBRC)
 #define QUIT LCTL(KC_Q)
+#define NSPEAK LCTL(KC_E)
+#define PSPEAK LSFT(LCTL(KC_E))
 
 // Define all of
 enum custom_keycodes {
