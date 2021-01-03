@@ -2,7 +2,7 @@
 #include "quantum.h"
 
 #define BWORD LALT(KC_BSPC)
-#define BLINE LCTL(KC_BSPC)
+#define BLINE LCLT(KC_BSPC)
 #define LWORD LALT(KC_LEFT)
 #define RWORD LALT(KC_RIGHT)
 #define JUMPBACK LSFT(KC_TAB)
