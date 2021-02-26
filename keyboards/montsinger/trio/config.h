@@ -35,11 +35,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DIRECT_PINS { \
     { D3 }, \
     { C6 }, \
-    { E6 } \
+    { B4 } \
 }
 
-#define ENCODERS_PAD_A { D4, D7, B4 }
-#define ENCODERS_PAD_B { F4, F6, B1 }
+#define ENCODERS_PAD_A { F5, B3, B6 }
+#define ENCODERS_PAD_B { D1, E6, B5 }
 
 //#define BACKLIGHT_PIN ?
 // #define BACKLIGHT_BREATHING
