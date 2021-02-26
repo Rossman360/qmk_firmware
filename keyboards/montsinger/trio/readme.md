@@ -1,6 +1,6 @@
 # Trio
 
-![Trio](PUT IMAGE HERE)
+![Trio](https://cdn.shopify.com/s/files/1/0408/1061/0841/products/00000IMG_00000_BURST20210226122914152_COVER_540x.jpg?v=1614361495)
 
 A macropad with support for three rotary encoders or MX switches.
 

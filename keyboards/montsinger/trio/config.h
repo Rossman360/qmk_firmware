@@ -1,5 +1,5 @@
 /*
-Copyright 2021 <ross@montsinger.net>
+Copyright 2021 Ross Montsinger <ross@montsinger.net>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,9 +20,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x552F
-#define DEVICE_VER      0x0002
+#define VENDOR_ID       0x524D
+#define PRODUCT_ID      0x0002
+#define DEVICE_VER      0x0001
 #define MANUFACTURER    Montsinger
 #define PRODUCT         Trio Rev. 1
 #define DESCRIPTION     Trio of keys and/or encoders
@@ -41,11 +41,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ENCODERS_PAD_A { F5, B3, B6 }
 #define ENCODERS_PAD_B { D1, E6, B5 }
 
-//#define BACKLIGHT_PIN ?
-// #define BACKLIGHT_BREATHING
-//#define BACKLIGHT_LEVELS 7
 
-/*#define RGB_DI_PIN D3
+/*#define RGB_DI_PIN D7
 #ifdef RGB_DI_PIN
   #define RGBLED_NUM 4
   #define RGBLIGHT_HUE_STEP 8

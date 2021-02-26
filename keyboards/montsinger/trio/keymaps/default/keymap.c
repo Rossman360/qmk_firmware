@@ -22,16 +22,10 @@ enum encoder_names {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /*
-        | Knob 1: Vol Dn/Up |      | Knob 2: Page Dn/Up |
-        | Press: Mute       | Home | Press: Play/Pause  |
-        | Hold: Layer 2     | Up   | RGB Mode           |
-        | Left              | Down | Right              |
-     */
     [0] = LAYOUT(
-        KC_1,
-        KC_2,
-        KC_3
+        KC_BSPC,
+        KC_PGUP,
+        KC_PGDN
     ),
 };
 
