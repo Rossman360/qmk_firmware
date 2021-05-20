@@ -61,9 +61,9 @@ diode)
 
 /* ws2812 RGB LED */
 #define RGB_DI_PIN B6
-#define RGBLED_NUM 15
+#define RGBLED_NUM 13
 
-
+#define RGBLIGHT_ANIMATIONS
 
 
 /* Bootmagic Lite key configuration */

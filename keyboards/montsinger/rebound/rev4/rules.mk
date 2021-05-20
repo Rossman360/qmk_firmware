@@ -12,7 +12,7 @@ MCU = atmega32u4
 BOOTLOADER = atmel-dfu
 
 BOOTMAGIC_ENABLE = lite     # Virtual DIP switch configuration
-MOUSEKEY_ENABLE = yes       # Mouse keys
+MOUSEKEY_ENABLE = no        # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = yes        # Console for debug
 COMMAND_ENABLE = yes        # Commands for debug and configuration
