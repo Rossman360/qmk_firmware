@@ -28,8 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FN1] = LAYOUT_all(
     _______, TAB1   , TAB2   , TAB3   , TAB4   , _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
-    KC_CAPS, _______, _______, _______, _______, _______, _______, KC_HOME, KC_LEFT, KC_UP  , KC_RIGHT,KC_END , KC_NO  ,
-    _______, _______, XPANDR , _______, PMERGE , _______, _______, _______, PMERGE , KC_DOWN, _______, _______, EMDASH ,
+    KC_CAPS, _______, KC_MS_LEFT,KC_MS_UP,KC_MS_RIGHT,_______, _______, KC_HOME, KC_LEFT, KC_UP  , KC_RIGHT,KC_END , KC_NO  ,
+    _______, _______, KC_MS_BTN1, KC_MS_DOWN, KC_MS_BTN2, _______, _______, _______, PMERGE , KC_DOWN, _______, _______, EMDASH ,
     WREFRESH,_______, _______, _______, LWORD  , RWORD  , _______, KC_NO  , _______, KC_NO  , _______, _______, _______
   ),
 

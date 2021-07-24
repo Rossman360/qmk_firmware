@@ -1,10 +1,10 @@
 #pragma once
 #include "quantum.h"
 
-#define BWORD LCTL(KC_BSPC)
-#define BLINE LALT(KC_BSPC)
-#define LWORD LCTL(KC_LEFT)
-#define RWORD LCTL(KC_RIGHT)
+#define BWORD LALT(KC_BSPC)
+#define BLINE LCTL(KC_BSPC)
+#define LWORD LALT(KC_LEFT)
+#define RWORD LALT(KC_RIGHT)
 #define JUMPBACK LSFT(KC_TAB)
 #define UNDO LCTL(KC_Z)
 #define XPANDR LCTL(LSFT(KC_X))
