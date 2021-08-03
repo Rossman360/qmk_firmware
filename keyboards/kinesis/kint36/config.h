@@ -61,7 +61,7 @@
 
 // Reduce input latency by lowering the USB polling interval
 // from its 10ms default to the 1ms minimum that USB 1.x (Full Speed) allows:
-//#define USB_POLLING_INTERVAL_MS 1
+#define USB_POLLING_INTERVAL_MS 1
 
 #define LED_PIN_ON_STATE 0
 #define LED_NUM_LOCK_PIN A14
