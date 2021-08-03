@@ -10,8 +10,6 @@
 #define DESK1 LCMD(KC_1)
 #define DESK2 LCMD(KC_2)
 #define DESK3 LCMD(KC_3)
-#define COLON LSFT(KC_SCLN)
-
 
 enum layer_names {
   _BASE,
@@ -57,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               _______,  _______,  _______,  _______,                                                                                       _______,  _______,  _______,  _______,
                                                       _______,  _______,                                               _______,  _______,
                                                                 _______,                                               _______,
-                                            _______,  CSPEAK,   CSPEAK,                                                 _______,  _______, KC_0
+                                            PARADOWN, CSPEAK,   CSPEAK,                                                _______,  _______, KC_0
   ),
 
 
