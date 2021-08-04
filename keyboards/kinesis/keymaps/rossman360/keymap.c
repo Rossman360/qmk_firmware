@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 KC_F3,                                                 KC_VOLD,
                                             KC_TAB,   PGMOD,    KC_ENTER,                                              KC_BSPC,  ENTMOD,   SPCMOD
   ),
- [_FN1] = LAYOUT_pretty(
+  [_FN1] = LAYOUT_pretty(
     _______,  _______,  _______,  _______,  _______,  _______,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_FN0,   RESET,
     _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  CTAB,
     _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  UNDO,     _______,  _______,  _______,  _______,
@@ -44,7 +44,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 _______,                                               _______,
                                             LWORD,    RWORD,    KC_END,                                                _______,  _______,  _______
   ),
-
   [_FN2] = LAYOUT_pretty(
     _______,  _______,  _______,  _______,  _______,  _______,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_FN0,   RESET,
     _______,  SPEAK1 ,  SPEAK2 ,  SPEAK3 ,  SPEAK4 ,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
@@ -56,8 +55,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 _______,                                               _______,
                                             PARADOWN, CSPEAK,   CSPEAK,                                                _______,  _______,  _______
   ),
-
-
   [_NUM] = LAYOUT_pretty(
     _______,  _______,  _______,  _______,  _______,  _______,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_FN0,   RESET,
     _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
@@ -69,8 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 _______,                                               _______,
                                             _______,  _______,  XXXXXXX,                                               _______,  KC_COMM,  KC_0
   ),
-
-[_DEL] = LAYOUT_pretty(
+  [_DEL] = LAYOUT_pretty(
     _______,  _______,  _______,  _______,  _______,  _______,    KC_F6,    KC_F7,    KC_F8,         KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_FN0,   RESET,
     _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,                                                                   _______,  _______,  _______,  _______,  _______,  _______,
