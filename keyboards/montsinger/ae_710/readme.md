@@ -8,8 +8,8 @@ Left and right shift must have the same functionality because they use the same 
 
 The way I connected the pins is as follows:
 
-    Y6 -> D3 #
-    Y5 -> D2 #
+    Y6 -> D3
+    Y5 -> D2
 Y4 -> D1
 Y3 -> D0
 Y2 -> D4
