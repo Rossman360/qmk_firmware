@@ -21,7 +21,7 @@ The way I connected the pins is as follows:
     A -> B7 (This is for both shift keys)
     L -> D5 (This is for caps lock)
 
-    +5V -> C7
+    +5V -> C7 (Other end of caps and shift are also connected to this. Perhaps LEDs could be enabled if QMK would let me use direct pins in addition to a switch matrix)
     A7 -> F4
     A6 -> F5
     A5 -> F6
