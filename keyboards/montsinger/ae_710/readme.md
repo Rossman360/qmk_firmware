@@ -33,8 +33,6 @@ The way I connected the pins to the Elite-C is as follows:
     A0 -> B6
 
 * Keyboard Maintainer: [Rossman360](https://github.com/rossman360)
-* Hardware Supported: Rebound rev1 rev2 or rev3; Pro Micro or Elite-C
-* Hardware Availability: [Montsinger.net](https://montsinger.net)
 
 Make example for this keyboard (after setting up your build environment):
 
