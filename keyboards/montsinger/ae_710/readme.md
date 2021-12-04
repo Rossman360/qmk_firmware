@@ -7,7 +7,7 @@ LEDs do not work.
 Left and right shift must have the same functionality because they use the same matrix position.
 Caps lock and shift keys are connected by direct pins, but QMK wouldn't let me do this since I am also using a switch matrix. Perhaps LEDs could be enabled if there is a workaround for this.
 
-The way I connected the pins is as follows:
+The way I connected the pins to the Elite-C is as follows:
 
     Y6 -> D3
     Y5 -> D2
