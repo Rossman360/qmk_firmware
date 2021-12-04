@@ -5,6 +5,7 @@
 This is a port of the Nakajima AE-710 (I think) to QMK using an Elite-C.
 LEDs do not work.
 Left and right shift must have the same functionality because they use the same matrix position.
+Caps lock and shift keys are connected by direct pins, but QMK wouldn't let me do this since I am also using a switch matrix. Perhaps LEDs could be enabled if there is a workaround for this.
 
 The way I connected the pins is as follows:
 
@@ -21,7 +22,7 @@ The way I connected the pins is as follows:
     A -> B7 (This is for both shift keys)
     L -> D5 (This is for caps lock)
 
-    +5V -> C7 (Other end of caps and shift are also connected to this. Perhaps LEDs could be enabled if QMK would let me use direct pins in addition to a switch matrix)
+    +5V -> C7 (Other end of caps/shift connect to this.)
     A7 -> F4
     A6 -> F5
     A5 -> F6
