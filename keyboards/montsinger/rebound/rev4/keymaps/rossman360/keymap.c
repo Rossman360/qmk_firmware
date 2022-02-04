@@ -7,7 +7,7 @@
 #define ENTMOD LT(_FN2, KC_ENTER)
 #define ESCMOD LT(_NUM, KC_ESC)
 #define RSMOD LT(_FN1, KC_RSHIFT)
-#
+#define SLEEP LCTL(LSFT(KC_POWER))
 
 enum layer_names {
   _BASE,
@@ -41,10 +41,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 [_DEL] = LAYOUT_all(
-    RESET,   _______, _______, _______, _______, _______,          _______, UNDO   , _______, _______, _______, CTAB   ,
+    RESET,   _______, _______, _______, _______, _______,          _______, UNDO   , _______, _______, _______, KC_SLEP,
     REMCAPS, _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_UP  ,KC_RIGHT, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DOWN, _______, _______, _______,
-    _______, _______, _______, BLINE  , KC_BSPC, BWORD  , _______, KC_NO  , KC_NO  , _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, RGB_MOD, _______, _______, KC_DOWN, _______, _______, _______,
+    _______, _______, _______, BLINE  , KC_BSPC, BWORD  , KC_SLEP, KC_NO  , KC_NO  , _______, _______, _______, _______
   ),
 
 [_NUM] = LAYOUT_all(
