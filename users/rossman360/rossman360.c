@@ -72,7 +72,7 @@ switch (keycode) {
 	break;
 	case REMCAPS:
 	if (record->event.pressed) {
-		SEND_STRING(SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_LALT(SS_TAP(X_LEFT)) SS_TAP(X_DELETE));
+		SEND_STRING(SS_TAP(X_LEFT) SS_TAP(X_LEFT) SS_LCTRL(SS_TAP(X_LEFT)) SS_TAP(X_DELETE));
 	}
 	break;
 	case EMDASH:
