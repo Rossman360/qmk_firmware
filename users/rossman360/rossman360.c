@@ -62,7 +62,7 @@ switch (keycode) {
 	break;
 	case PMERGE:
 	if (record->event.pressed) {
-		SEND_STRING(SS_TAP(X_HOME) SS_TAP(X_BSPACE) SS_TAP(X_SPACE) SS_LALT(SS_TAP(X_BSPACE)) SS_TAP(X_SPACE));
+		SEND_STRING(SS_TAP(X_HOME) SS_TAP(X_BSPACE) SS_TAP(X_SPACE) SS_LCTRL(SS_TAP(X_BSPACE)) SS_TAP(X_SPACE));
 	}
 	break;
 	case WREFRESH:
