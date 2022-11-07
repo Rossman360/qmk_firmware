@@ -11,25 +11,27 @@
 
 
 /* key matrix size */
-#define MATRIX_ROWS 10
-#define MATRIX_COLS 6
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 7
 
 #define DIODE_DIRECTION ROW2COL
 
-/* RPI pins
-#define MATRIX_ROW_PINS { GP1, GP28, GP7, GP9, GP4, GP0, GP29, GP6, GP8, GP5 }
-#define MATRIX_COL_PINS { GP27, GP26, GP23, GP21, GP2, GP3 }
 
-#define ENCODERS_PAD_A { GP22 }
-#define ENCODERS_PAD_B { GP20 }
+#define MATRIX_ROW_PINS { GP20, GP4, GP2, GP23, GP22, GP27, GP29, GP1 }
+#define MATRIX_COL_PINS { GP0, GP3, GP5, GP6, GP7, GP8, GP9 }
+
+#define ENCODERS_PAD_A { GP26 }
+#define ENCODERS_PAD_B { GP28 }
+
+
+/* AVR pins
+#define MATRIX_ROW_PINS { B3, D4, D1, B2, B1, F6, F4, D2 }
+#define MATRIX_COL_PINS { D3, D0, C6, D7, E6, B4, B5 }
+
+#define ENCODERS_PAD_A { F7 }
+#define ENCODERS_PAD_B { F5 }
 */
 
-
-#define MATRIX_ROW_PINS { F5, B3, D1, C6, B5, F4, B1, D0, D4, B4 }
-#define MATRIX_COL_PINS { D2, D3, F7, F6, B6, B2 }
-
-#define ENCODERS_PAD_A { D7 }
-#define ENCODERS_PAD_B { E6 }
 
 
 /* #define RGB_DI_PIN GP12 */
