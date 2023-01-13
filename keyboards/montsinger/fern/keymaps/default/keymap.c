@@ -6,12 +6,7 @@
 // entirely and just use numbers.
 
 enum layer_names {
-  _QWERTY,
-  _COLEMAK,
-  _DVORAK,
-  _LOWER,
-  _RAISE,
-  _ADJUST
+  _QWERTY
 };
 
 enum custom_keycodes {
@@ -30,14 +25,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   QK_BOOT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
    KC_BSPC, KC_2,    KC_3,    KC_LCTL, KC_TAB,  KC_PGDN,         KC_ENT,  KC_SPC,  KC_1,    KC_2,    KC_3,    KC_4
 )
-};
-
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (clockwise) {
-      tap_code16(S(KC_VOLD));
-    } else {
-      tap_code16(KC_VOLU);
-    }
-    return true;
 };
