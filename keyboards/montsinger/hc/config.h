@@ -8,11 +8,14 @@
 #define DIODE_DIRECTION COL2ROW
 
 /* key matrix size */
-#define MATRIX_ROWS 5*2
-#define MATRIX_COLS 15+4
+#define MATRIX_ROWS 10
+#define MATRIX_COLS 19
 
-//#define MATRIX_ROW_PINS_R { P16, P00, P01, P02 }
-//#define MATRIX_COL_PINS_R { P03, P15, P17, P10, P07 }
+#define MATRIX_ROWS_NP 5
+#define MATRIX_COLS_NP 4
+
+//#define MATRIX_ROW_PINS_NP { P16, P00, P01, P02 }
+//#define MATRIX_COL_PINS_NP { P03, P15, P17, P10, P07 }
 
 
 /* #define RGB_DI_PIN GP12 */
