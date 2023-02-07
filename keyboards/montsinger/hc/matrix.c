@@ -41,9 +41,9 @@ uint8_t init_tca9555(void) {
     // - driving : output : 0
     uint8_t conf[2] = {
         // This means: read all pins of port 0
-        0b11111111,
+        0b01110111,
         // This means: read all pins of port 1
-        0b11111111,
+        0b01011110,
     };
     tca9555_status = i2c_writeReg(I2C_ADDR, IODIRA, conf, 2, I2C_TIMEOUT);
 
@@ -113,22 +113,27 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
     }
 
     bool changed = false;
-    for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
-        // select rows from left and right hands
-        uint8_t left_index  = i;
-        uint8_t right_index = i + MATRIX_ROWS;
-        select_row(left_index);
-        select_row(right_index);
+    uint8_t i = 0;
+    for (i = 0; i < MATRIX_ROWS-MATRIX_ROWS_NP; i++) {
+        // select rows from MCU
+        uint8_t alpha_index  = i;
+        select_row(alpha_index);
 
         // we don't need a 30us delay anymore, because selecting a
         // left-hand row requires more than 30us for i2c.
 
-        changed |= store_matrix_row(current_matrix, left_index);
-        changed |= store_matrix_row(current_matrix, right_index);
+        changed |= store_matrix_row(current_matrix, alpha_index);
 
         unselect_rows();
     }
+    for(; i < MATRIX_ROWS; i++) {
+        uint8_t np_index  = i;
+        select_row(np_index);
+        
+        changed |= store_matrix_row(current_matrix, np_index);
 
+        unselect_rows();
+    }
     return changed;
 }
 
@@ -138,7 +143,7 @@ static void init_cols(void) {
 
     // init on mcu
     pin_t matrix_col_pins_mcu[MATRIX_COLS] = MATRIX_COL_PINS;
-    for (int pin_index = 0; pin_index < MATRIX_COLS; pin_index++) {
+    for (int pin_index = 0; pin_index < MATRIX_COLS-MATRIX_COLS_NP; pin_index++) {
         pin_t pin = matrix_col_pins_mcu[pin_index];
         setPinInput(pin);
         writePinHigh(pin);
@@ -147,11 +152,11 @@ static void init_cols(void) {
 
 //COLS
 static matrix_row_t read_cols(uint8_t row) {
-    if (row < MATRIX_ROWS) {
+    if (row < MATRIX_ROWS-MATRIX_ROWS_NP) {
         pin_t        matrix_col_pins_mcu[MATRIX_COLS] = MATRIX_COL_PINS;
         matrix_row_t current_row_value                         = 0;
         // For each col...
-        for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++) {
+        for (uint8_t col_index = 0; col_index < MATRIX_COLS-MATRIX_COLS_NP; col_index++) {
             // Select the col pin to read (active low)
             uint8_t pin_state = readPin(matrix_col_pins_mcu[col_index]);
 
@@ -164,23 +169,17 @@ static matrix_row_t read_cols(uint8_t row) {
             return 0;
         } else {
             uint8_t data    = 0;
-            uint8_t port0   = 0;
-            tca9555_status  = i2c_readReg(I2C_ADDR, IREGP0, &port0, 1, I2C_TIMEOUT);
+            uint8_t ports[2]   = {0};
+            tca9555_status  = i2c_readReg(I2C_ADDR, IREGP0, &ports[0], 2, I2C_TIMEOUT);
             if (tca9555_status) {  // if there was an error
                 // do nothing
                 return 0;
             } else {
-                port0 = ~port0;
-                // We read all the pins on GPIOA.
-                // The initial state was all ones and any depressed key at a given column for the currently selected row will have its bit flipped to zero.
-                // The return value is a row as represented in the generic matrix code were the rightmost bits represent the lower columns and zeroes represent non-depressed keys while ones represent depressed keys.
-
-                data |= (port0 & 0x01) << 4;
-                data |= (port0 & 0x02) << 2;
-                data |= (port0 & 0x04);
-                data |= (port0 & 0x08) >> 2;
-                data |= (port0 & 0x10) >> 4;
-
+                data |= (ports[1] & 0x40);
+                data |= (ports[0] & 0x01) << 1;
+                data |= (ports[0] & 0x02) << 2;
+                data |= (ports[0] & 0x04) << 3;
+                data = ~data;
                 tca9555_status = I2C_STATUS_SUCCESS;
                 return data;
             }
@@ -195,7 +194,7 @@ static void unselect_rows(void) {
 
     // unselect rows on microcontroller
     pin_t matrix_row_pins_mcu[MATRIX_ROWS] = MATRIX_ROW_PINS;
-    for (int pin_index = 0; pin_index < MATRIX_ROWS; pin_index++) {
+    for (int pin_index = 0; pin_index < MATRIX_ROWS-MATRIX_ROWS_NP; pin_index++) {
         pin_t pin = matrix_row_pins_mcu[pin_index];
         setPinInput(pin);
         writePinLow(pin);
@@ -204,10 +203,9 @@ static void unselect_rows(void) {
 
 //ROWS
 static void select_row(uint8_t row) {
-    uint8_t port1 = 0xff;
-    uint8_t port0 = 0;
+    uint8_t ports[2] = {0xff};
 
-    if (row < MATRIX_ROWS) {
+    if (row < MATRIX_ROWS-MATRIX_ROWS_NP) {
         // select on atmega32u4
         pin_t matrix_row_pins_mcu[MATRIX_ROWS] = MATRIX_ROW_PINS;
         pin_t pin                                       = matrix_row_pins_mcu[row];
@@ -219,15 +217,15 @@ static void select_row(uint8_t row) {
                                 // do nothing
         } else {
             switch(row) {
-                case 5: port0 &= ~(1 << 3); break;
-                case 6: port1 &= ~(1 << 5); break;
-                case 7: port1 &= ~(1 << 7); break;
-                case 8: port1 &= ~(1 << 0); break;
-                case 9: port0 &= ~(1 << 7); break;
+                case 5: ports[0] &= ~(1 << 3); break;
+                case 6: ports[1] &= ~(1 << 5); break;
+                case 7: ports[1] &= ~(1 << 7); break;
+                case 8: ports[1] &= ~(1 << 0); break;
+                case 9: ports[0] &= ~(1 << 7); break;
                 default:                    break;
             }
 
-            tca9555_status = i2c_writeReg(I2C_ADDR, OREGP1, &port1, 1, I2C_TIMEOUT);
+            tca9555_status = i2c_writeReg(I2C_ADDR, OREGP0, &ports[0], 2, I2C_TIMEOUT);
             // Select the desired row by writing a byte for the entire GPIOB bus where only the bit representing the row we want to select is a zero (write instruction) and every other bit is a one.
             // Note that the row - MATRIX_ROWS reflects the fact that being on the right hand, the columns are numbered from MATRIX_ROWS to MATRIX_ROWS, but the pins we want to write to are indexed from zero up on the GPIOB bus.
         }

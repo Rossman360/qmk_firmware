@@ -20,8 +20,5 @@
         }
     }
 
-    "matrix_pins": {
-        "cols": ["D4", "D6", "D7", "B4", "B5", "B6", "C7", "F4", "F1", "F0", "B0", "B1", "B2", "B3", "B7", "NO_PIN", "NO_PIN", "NO_PIN", "NO_PIN"],
-        "rows": ["F6", "F5", "C6", "F7", "D5", "NO_PIN", "NO_PIN", "NO_PIN", "NO_PIN", "NO_PIN",]
-    },
+
 }
