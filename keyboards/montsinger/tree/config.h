@@ -5,9 +5,9 @@
 
 #include "config_common.h"
 
-#define VENDOR_ID 0x1234
-#define PRODUCT_ID 0x5678
-#define DEVICE_VER 0x0001
+//#define VENDOR_ID 0x1234
+//#define PRODUCT_ID 0x5678
+//#define DEVICE_VER 0x0001
 
 
 /* key matrix size */
