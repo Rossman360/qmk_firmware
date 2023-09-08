@@ -1,7 +1,7 @@
 {
-    "manufacturer": "CannonKeys",
-    "keyboard_name": "Bastion60",
-    "maintainer": "awkannan",
+    "manufacturer": "Montsinger",
+    "keyboard_name": "Palmetto",
+    "maintainer": "Rossman360",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
     "features": {
@@ -20,11 +20,11 @@
     },
     "processor": "RP2040",
    
-    "url": "https://cannonkeys.com",
+    "url": "https://carolinamech.com",
     "usb": {
-        "device_version": "0.0.1",
-        "pid": "0x0020",
-        "vid": "0xCA04"
+        "device_version": "2.0.1",
+        "pid": "0x0006",
+        "vid": "0x524D"
     },
  "community_layouts": [
         "60_ansi",

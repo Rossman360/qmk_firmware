@@ -1,4 +1,4 @@
-// Copyright 2023 Andrew Kannan
+// Copyright 2023 Ross Montsinger
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "config_common.h"
